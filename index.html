@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding-inline: 50px;
+        }
+
+        .flex-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible grid columns */
+            gap: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .flex-cell {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .flex-cell:hover {
+            background-color: #f5f5f5;
+        }
+
+        .flex-cell .title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .flex-cell .description {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .flex-container {
+                padding-inline: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flex-cell {
+                padding: 8px; /* Reduce padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-cell" onclick="copyText('program1')">
+            <div class="title">Program 1 🖥️</div>
+            <div class="description">DDA Line Drawing</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program2')">
+            <div class="title">Program 2 📊</div>
+            <div class="description">Scan Fill Algorithm</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program3')">
+            <div class="title">Program 3 🔍</div>
+            <div class="description">Line Clipping</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program4')">
+            <div class="title">Program 4 ⚙️</div>
+            <div class="description">Transformations</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program5')">
+            <div class="title">Program 5 📈</div>
+            <div class="description">Hilbert Curve</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program6')">
+            <div class="title">Program 6 📝</div>
+            <div class="description">3D Ball Animation</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program7')">
+            <div class="title">Program 7 🎨</div>
+            <div class="description">Walking Man with Umbrella</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program8')">
+            <div class="title">Program 8 🎮</div>
+            <div class="description">Game Development</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program9')">
+            <div class="title">Program 9 🎵</div>
+            <div class="description">Music Visualization</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program9')">
+            <div class="title">Program 9 🎵</div>
+            <div class="description">Music Visualization</div>
+        </div>
+        <div class="flex-cell" onclick="copyText('program9')">
+            <div class="title">Program 9 🎵</div>
+            <div class="description">Music Visualization</div>
+        </div>
+    </div>
+
+    <script>
+        function copyText(program) {
+            let textToCopy;
+            switch (program) {
+                case 'program1':
+                    textToCopy = `//Practical no 1
+#include<iostream>
+#include <graphics.h>
+#include <conio.h>
+#include <cmath>
+using namespace std;
+
+class DDA_Line {
+public:
+    DDA_Line(int x1, int y1, int x2, int y2) {
+        ddaAlgorithm(x1, y1, x2, y2);
+    }
+
+private:
+    void ddaAlgorithm(int x1, int y1, int x2, int y2) {
+        int dx = x2 - x1;
+        int dy = y2 - y1;
+        int steps;
+
+        if (abs(dx) > abs(dy))
+            steps = abs(dx);
+        else
+            steps = abs(dy);
+
+        float xinc = dx / (float)steps;
+        float yinc = dy / (float)steps;
+        float x = x1;
+        float y = y1;
+
+        for (int i = 0; i <= steps; i++) {
+            putpixel(round(x), round(y), WHITE);
+            x += xinc;
+            y += yinc;
+        }
+    }
+};
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+    DDA_Line line(100, 100, 200, 200);
+    getch();
+    closegraph();
+    return 0;`;
+                    break;
+                case 'program2':
+                    textToCopy = `//Practical no 2
+#include <conio.h>
+#include <iostream>
+#include <graphics.h>
+#include <stdlib.h>
+using namespace std;
+
+class point {
+public:
+    int x, y;
+};
+
+class poly {
+private:
+    point p[20];
+    int inter[20], x, y;
+    int v, xmin, ymin, xmax, ymax;
+public:
+    int c;
+    void read();
+    void calcs();
+    void display();
+    void ints(float);
+    void sort(int);
+};
+
+// Implementation of methods...
+
+int main() {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program3':
+                    textToCopy = `//Practical no 3
+#include<graphics.h>
+#include<conio.h>
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+// Line clipping implementation...
+
+int main() {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program4':
+                    textToCopy = `//Practical no 4
+#include <iostream>
+#include <graphics.h>
+#include <cmath>
+using namespace std;
+
+// Transformation class implementation...
+
+int main() {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program5':
+                    textToCopy = `//Practical No 5
+#include<iostream>
+#include<graphics.h>
+#include<math.h>
+#include<cstdlib>
+using namespace std;
+
+// Hilbert curve implementation...
+
+int main() {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program6':
+                    textToCopy = `// Program 6
+#include<iostream>
+#include<stdlib.h>
+#ifdef __APPLE__
+#include<openGL/openGL.h>
+#include<GLUT/glut.h>
+#else 
+#include<GL/glut.h>
+#endif
+using namespace std;
+
+// 3D ball animation implementation...
+
+int main(int argc,char** argv) {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program7':
+                    textToCopy = `//Program 7 Umbrella
+#include<iostream>
+#include<conio.h>
+#include<graphics.h>
+#include<stdlib.h>
+#include<dos.h>
+using namespace std;
+
+// Walking man with umbrella implementation...
+
+int main() {
+    // Main function implementation...
+    return 0;
+}`;
+                    break;
+                case 'program8':
+                    textToCopy = `//Program 8
+// Game development implementation...`;
+                    break;
+                case 'program9':
+                    textToCopy = `//Program 9
+// Music visualization implementation...`;
+                    break;
+                default:
+                    textToCopy = '';
+            }
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Copied to clipboard: ' + textToCopy);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
